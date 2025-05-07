@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Tentukan Base URL (Sesuaikan dengan path proyek di server)
-$base_url = "http://localhost/appweb/admin/";
+$base_url = "http://localhost/admin/";
 
 // Pastikan semua file penting tersedia
 require_once __DIR__ . '/controller.php';
