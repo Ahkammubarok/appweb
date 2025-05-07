@@ -1,0 +1,10 @@
+FROM nginx:alpine
+
+# Copy semua konten FE ke direktori html nginx
+COPY ../assets /usr/share/nginx/html/assets
+COPY ../forms /usr/share/nginx/html/forms
+COPY ../layout /usr/share/nginx/html/layout
+COPY ../logo /usr/share/nginx/html/logo
+COPY ../master_landing_page /usr/share/nginx/html/master_landing_page
+
+EXPOSE 80
