@@ -8,8 +8,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Password09!
       MYSQL_DATABASE: appweb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: Password09!
     volumes:
       - db_data:/var/lib/mysql
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
