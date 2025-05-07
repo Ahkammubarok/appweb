@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2025 at 12:05 PM
+-- Generation Time: May 07, 2025 at 06:00 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -74,6 +74,28 @@ INSERT INTO `barang` (`id_barang`, `kode_barang`, `nama`, `id_kategori`, `jumlah
 (3, 'LAP-THI-001', 'ThinkPad X1 Extreme Gen 5', 1, '4', '80000000', '2025-03-08 17:53:05'),
 (4, 'LAP-THI-002', 'ThinkPad P15v Gen 3 (Intel)', 1, '2', '50000000', '2025-03-08 17:53:26'),
 (6, 'MON-DEL-003', 'Dell 24566', 2, '123', '12', '2025-03-12 07:11:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id_kategori` int(11) NOT NULL,
+  `nama_kategori` varchar(50) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `time`) VALUES
+(1, 'Laptop', '2025-03-08 17:51:05'),
+(2, 'Monitor', '2025-03-08 17:51:18'),
+(3, 'tes', '2025-03-12 14:03:25'),
+(4, 'r', '2025-03-12 14:07:48');
 
 -- --------------------------------------------------------
 
@@ -184,6 +206,12 @@ ALTER TABLE `barang`
   ADD KEY `barang_ibfk_1` (`id_kategori`);
 
 --
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id_kategori`);
+
+--
 -- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
@@ -222,6 +250,12 @@ ALTER TABLE `akun`
 --
 ALTER TABLE `barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
