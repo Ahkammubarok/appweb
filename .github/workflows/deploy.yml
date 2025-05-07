@@ -33,7 +33,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockerfiles/Dockerfile.backend
+          file: ./dockerfiles/dockerfile.be
           push: true
           tags: ${{ env.BACKEND_IMAGE }}
 
@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockerfiles/Dockerfile.frontend
+          file: ./dockerfiles/dockerfile.fe
           push: true
           tags: ${{ env.FRONTEND_IMAGE }}
 
