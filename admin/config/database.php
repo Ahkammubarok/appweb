@@ -1,2 +1,2 @@
 <?php
-$db = mysqli_connect('localhost', 'root', '', 'cmp');
+$db = mysqli_connect('localhost', 'root', 'Password09!', 'cmp');
