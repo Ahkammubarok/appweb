@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     // Secret key reCAPTCHA
     // $secret_key = "6Ldfy-cqAAAAAA5Ko5SsZOGDf1a5Cm761izRE0ft";
-$secret_key = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+    $secret_key = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
     $response_key = $_POST['g-recaptcha-response'];
     $verifikasi = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret_key&response=$response_key");
     $response = json_decode($verifikasi);
