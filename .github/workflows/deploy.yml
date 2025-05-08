@@ -45,7 +45,7 @@ jobs:
           push: true
           tags: ${{ env.FRONTEND_IMAGE }}
 
-     edit ini mas
+     
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
