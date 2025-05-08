@@ -45,6 +45,8 @@ jobs:
           push: true
           tags: ${{ env.FRONTEND_IMAGE }}
 
+     edit ini mas
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -56,11 +58,13 @@ jobs:
             sudo su -c 'docker stop ${{ env.CONTAINER_NAME_BE }} || true'
             sudo su -c 'docker rm ${{ env.CONTAINER_NAME_BE }} || true'
             sudo su -c 'docker run -d --name ${{ env.CONTAINER_NAME_BE }} --restart always -p 8082:80 ${{ env.BACKEND_IMAGE }}'
-
-            sudo su -c 'docker pull ${{ env.FRONTEND_IMAGE }}'
-            sudo su -c 'docker stop ${{ env.CONTAINER_NAME_FE }} || true'
-            sudo su -c 'docker rm ${{ env.CONTAINER_NAME_FE }} || true'
-            sudo su -c 'docker run -d --name ${{ env.CONTAINER_NAME_FE }} --restart always -p 8081:80 ${{ env.FRONTEND_IMAGE }}'
-
+            sudo su -c 'docker image prune -a -f'
             sudo systemctl reload nginx
+
+#            sudo su -c 'docker pull ${{ env.FRONTEND_IMAGE }}'
+#            sudo su -c 'docker stop ${{ env.CONTAINER_NAME_FE }} || true'
+#            sudo su -c 'docker rm ${{ env.CONTAINER_NAME_FE }} || true'
+#            sudo su -c 'docker run -d --name ${{ env.CONTAINER_NAME_FE }} --restart always -p 8081:80 ${{ env.FRONTEND_IMAGE }}'
+
+#            sudo systemctl reload nginx
 
