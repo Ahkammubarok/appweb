@@ -9,8 +9,8 @@ if (isset($_POST['login'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
     // reCAPTCHA (test key dari Google)
-    $secret_key = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
-    $response_key = $_POST['g-recaptcha-response'] ?? '';
+    //$secret_key = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+    //$response_key = $_POST['g-recaptcha-response'] ?? '';
 
     if (!empty($response_key)) {
         $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret_key&response=$response_key");
@@ -46,6 +46,7 @@ if (isset($_POST['login'])) {
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,6 +68,7 @@ if (isset($_POST['login'])) {
     </style>
     <link href="assets/css/signin.css" rel="stylesheet">
 </head>
+
 <body class="text-center">
     <main class="form-signin">
         <form action="" method="POST">
@@ -94,7 +96,7 @@ if (isset($_POST['login'])) {
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="mb-3 mt-3">
-                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                <!-- <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div> -->
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit" name="login">Sign in</button>
             <p class="mt-5 mb-3 text-muted">Copyright &copy; FM Tech <?= date('Y') ?></p>
@@ -103,4 +105,5 @@ if (isset($_POST['login'])) {
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
+
 </html>
