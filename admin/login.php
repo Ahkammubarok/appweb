@@ -1,7 +1,7 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
 include 'config/app.php';
 
 if (isset($_POST['login'])) {
@@ -21,12 +21,10 @@ if (isset($_POST['login'])) {
             header("Location: index.php?login=success");
             exit;
         } else {
-            header("Location: login.php?error=1");
-            exit;
+            $error = true;
         }
     } else {
-        header("Location: login.php?error=1");
-        exit;
+        $error = true;
     }
 }
 ?>
@@ -49,7 +47,7 @@ if (isset($_POST['login'])) {
             <img class="mb-4" src="assets/icon/login.png" alt="" width="100" height="100">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <?php if (isset($_GET['error'])) : ?>
+            <?php if (isset($error)) : ?>
                 <div class="alert alert-danger text-center">
                     <b>Username atau Password Salah</b>
                 </div>
