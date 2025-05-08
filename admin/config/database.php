@@ -1,2 +1,2 @@
 <?php
-$db = mysqli_connect('localhost', 'root', 'Password09!', 'appweb');
+$db = mysqli_connect('mysql', 'root', 'Password09!', 'appweb');
