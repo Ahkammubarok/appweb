@@ -21,10 +21,12 @@ if (isset($_POST['login'])) {
             header("Location: index.php?login=success");
             exit;
         } else {
-            $error = true;
+            header("Location: login.php?error=1");
+            exit;
         }
     } else {
-        $error = true;
+        header("Location: login.php?error=1");
+        exit;
     }
 }
 ?>
@@ -47,7 +49,7 @@ if (isset($_POST['login'])) {
             <img class="mb-4" src="assets/icon/login.png" alt="" width="100" height="100">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-            <?php if (isset($error)) : ?>
+            <?php if (isset($_GET['error'])) : ?>
                 <div class="alert alert-danger text-center">
                     <b>Username atau Password Salah</b>
                 </div>
