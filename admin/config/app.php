@@ -18,5 +18,5 @@ if (!isset($title)) {
     $title = "Admin Panel";
 }
 
-ob_end_flush(); // Akhiri output buffering
+// ob_end_flush(); // Akhiri output buffering
 ?>
